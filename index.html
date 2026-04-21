@@ -154,8 +154,8 @@ let prodotti = {
   "TEASMPF12B": {
     "descrizione": "GUAINA NERA PAST 12 (50m)",
     "codiceInterno": "10863",
-    "tipo": "C"
-    //"categoria": "Elettrica"
+    "tipo": "C",
+    "categoria": "Elettrica"
   },
   "TEASMPF17B": {
     "descrizione": "GUAINA NERA PAST 17 (50m)",
@@ -1311,7 +1311,7 @@ function fineOrdine() {
       "Numero parte": cod,
       "Descrizione": p.descrizione,  
       "Numero di magazzino": p.codiceInterno,
-      //"Categoria": p.categoria || "",
+      "Categoria": p.categoria || "",
       "Oggetto": p.tipo
     });
   }
