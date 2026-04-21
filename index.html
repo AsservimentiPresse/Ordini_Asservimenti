@@ -1303,13 +1303,15 @@ function fineOrdine() {
   for (let cod in ordine) {
     let p = prodotti[cod];
 
+    //Struttura Excel definita qui sotto
     dati.push({
-      "Descrizione": p.descrizione,
-      "Q.ta": ordine[cod],
-      "CODICE": cod,
-      "CODICE INTERNO": p.codiceInterno,
       "Tipo": p.tipo
-    });
+      "Codice": cod,
+      "Q.ta": ordine[cod],
+      "Descrizione": p.descrizione,
+      "CODICE INTERNO": p.codiceInterno,
+      "Categoria": "",
+      });
   }
 
   if (confirm("Vuoi salvare l'Excel?")) {
