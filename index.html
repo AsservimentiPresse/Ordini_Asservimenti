@@ -1310,7 +1310,7 @@ function fineOrdine() {
       "Numero parte": cod,
       "Descrizione": p.descrizione,  
       "Numero di magazzino": p.codiceInterno,
-      "Categoria": "",
+      "Categoria": p.categoria || "",
       "Oggetto": p.tipo
     });
   }
