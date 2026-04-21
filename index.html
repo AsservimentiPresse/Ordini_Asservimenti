@@ -1326,10 +1326,26 @@ function fineOrdine() {
 
 // 📊 EXCEL
 function generaExcel(dati) {
-  let ws = XLSX.utils.json_to_sheet(dati);
-  let wb = XLSX.utils.book_new();
 
+  // 1. Crea foglio vuoto
+  let ws = XLSX.utils.aoa_to_sheet([]);
+
+  // 2. Prima riga personalizzata
+  XLSX.utils.sheet_add_aoa(ws, [
+    ["", 1, "Magazzino", "", "", "", "C"]
+  ], { origin: "A1" });
+
+  // 3. Dati a partire da riga 2
+  XLSX.utils.sheet_add_json(ws, dati, {
+    origin: "A2",
+    skipHeader: false
+  });
+
+  // 4. Workbook
+  let wb = XLSX.utils.book_new();
   XLSX.utils.book_append_sheet(wb, ws, "Ordine");
+
+  // 5. Salva file
   XLSX.writeFile(wb, "ordine_" + new Date().toISOString() + ".xlsx");
 }
 
