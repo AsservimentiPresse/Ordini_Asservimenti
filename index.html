@@ -1304,11 +1304,13 @@ function fineOrdine() {
     let p = prodotti[cod];
 
     dati.push({
-      "Descrizione": p.descrizione,
-      "Q.ta": ordine[cod],
+      "Tipo": p.tipo,
       "CODICE": cod,
+      "Q.ta": ordine[cod],
+      "Descrizione": p.descrizione,    
       "CODICE INTERNO": p.codiceInterno,
-      "Tipo": p.tipo
+      "Categoria": ""
+      
     });
   }
 
